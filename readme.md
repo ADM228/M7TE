@@ -1,4 +1,18 @@
-<h1 align=center>M7TE - THE Mode 7 graphics & tilemap editor </h1>
+<h1 align=center>M7TE - THE SNES Mode 7 graphics & tilemap editor </h1>
 
 
-<h3>
+<h3>Features:</h3>
+<ul>
+    <li>Will be written in Python, which means cross-platform compatibility</li>
+    <li>A good-looking interface in Qt5</li>
+</ul>
+<h3>Basic things to be added</h3>
+<ul>
+    <li>The entire code</li>
+    <li>Graphics import (YYCHR compatible)</li>
+</ul>
+<h3>Things to be added in the far future </h3>
+<ul> 
+    <li>HDMA & Windowing support</li>
+    <li>Mode 7 EXTBG</li>
+</ul>
