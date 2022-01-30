@@ -3,7 +3,7 @@
 
 <h3>Features:</h3>
 <ul>
-    <li>Will be written in Python, which means cross-platform compatibility</li>
+    <li>Will be written in Python, which means cross-platform compatibility (unlike everything else, which is only available on DOS)</li>
     <li>A good-looking interface in Qt5</li>
 </ul>
 <h3>Basic things to be added</h3>
