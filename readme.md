@@ -18,4 +18,4 @@
 </ul>
 
 <h3> Notes:</h3>
-\*It doesn't work yet lol, wait a month at least
+*It doesn't work yet lol, wait a month at least
