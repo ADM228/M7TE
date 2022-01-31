@@ -1,4 +1,4 @@
-<h1 align=center>M7TE - THE SNES Mode 7 graphics & tilemap editor </h1>
+<h1 align=center>M7TE - A SNES Mode 7 graphics & tilemap editor* </h1>
 
 
 <h3>Features:</h3>
@@ -16,3 +16,6 @@
     <li>HDMA & Windowing support</li>
     <li>Mode 7 EXTBG</li>
 </ul>
+
+<h3> Notes:</h3>
+\*It doesn't work yet lol, wait a month at least
