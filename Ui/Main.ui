@@ -19,26 +19,37 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="3">
-     <widget class="QGraphicsView" name="graphicsView_5"/>
+     <widget class="QGraphicsView" name="graphicsView_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
     </item>
     <item row="0" column="0" colspan="2">
-     <widget class="QGraphicsView" name="graphicsView"/>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
     </item>
     <item row="0" column="2">
-     <spacer name="horizontalSpacer">
+     <widget class="Line" name="line">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Vertical</enum>
       </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Minimum</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -55,6 +66,44 @@
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <widget class="QMenu" name="menuSavestate">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="title">
+       <string>Savestate</string>
+      </property>
+      <addaction name="actionSnes9x"/>
+      <addaction name="actionZSNES"/>
+      <addaction name="actionBSNES"/>
+     </widget>
+     <addaction name="actionRaw_8bpp_graphivd"/>
+     <addaction name="actionPallete"/>
+     <addaction name="actionRGB_Pallete"/>
+     <addaction name="actionRaw_Tilemap"/>
+     <addaction name="actionMode_7_daata"/>
+     <addaction name="menuSavestate"/>
+    </widget>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <addaction name="actionGraphics_2"/>
+     <addaction name="actionRawTilemap"/>
+     <addaction name="actionGraphics_Tilemap_interleaved"/>
+    </widget>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionOpen_Recent"/>
+    <addaction name="actionSave_Session"/>
+    <addaction name="actionSave_Session_As"/>
+    <addaction name="separator"/>
+    <addaction name="menuImport"/>
+    <addaction name="menuExport"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -109,6 +158,112 @@
     <bool>false</bool>
    </attribute>
   </widget>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionOpen_Recent">
+   <property name="text">
+    <string>Open Recent</string>
+   </property>
+  </action>
+  <action name="actionImport_8bpp">
+   <property name="text">
+    <string>Import 8bpp</string>
+   </property>
+  </action>
+  <action name="actionImport_8bpp_graphics">
+   <property name="text">
+    <string>Import 8bpp graphics...</string>
+   </property>
+  </action>
+  <action name="actionImport_pallete">
+   <property name="text">
+    <string>Import pallete...</string>
+   </property>
+  </action>
+  <action name="actionImport_Pure_tilemap">
+   <property name="text">
+    <string>Import Pure tilemap...</string>
+   </property>
+  </action>
+  <action name="actionRaw_8bpp_graphivd">
+   <property name="text">
+    <string>Raw 8bpp graphics...</string>
+   </property>
+  </action>
+  <action name="actionPallete">
+   <property name="text">
+    <string>Pallete...</string>
+   </property>
+  </action>
+  <action name="actionRGB_Pallete">
+   <property name="text">
+    <string>RGB Pallete...</string>
+   </property>
+  </action>
+  <action name="actionRaw_Tilemap">
+   <property name="text">
+    <string>Raw Tilemap...</string>
+   </property>
+  </action>
+  <action name="actionMode_7_daata">
+   <property name="text">
+    <string>Interleaved graphics &amp; tilemap...</string>
+   </property>
+   <property name="iconText">
+    <string>Interleaved graphics &amp; tilemap</string>
+   </property>
+   <property name="toolTip">
+    <string>Interleaved graphics &amp; tilemap</string>
+   </property>
+  </action>
+  <action name="actionSnes9x">
+   <property name="text">
+    <string>Snes9x...</string>
+   </property>
+  </action>
+  <action name="actionZSNES">
+   <property name="text">
+    <string>ZSNES...</string>
+   </property>
+  </action>
+  <action name="actionBSNES">
+   <property name="text">
+    <string>BSNES/higan...</string>
+   </property>
+  </action>
+  <action name="actionGraphics_2">
+   <property name="text">
+    <string>Raw Graphics...</string>
+   </property>
+  </action>
+  <action name="actionRawTilemap">
+   <property name="text">
+    <string>Raw Tilemap...</string>
+   </property>
+  </action>
+  <action name="actionGraphics_Tilemap_interleaved">
+   <property name="text">
+    <string>Graphics &amp; Tilemap interleaved...</string>
+   </property>
+  </action>
+  <action name="actionSave_Session">
+   <property name="text">
+    <string>Save Session</string>
+   </property>
+  </action>
+  <action name="actionSave_Session_As">
+   <property name="text">
+    <string>Save Session As...</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
