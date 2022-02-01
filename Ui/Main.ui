@@ -6,9 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>618</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Ubuntu</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string notr="true">M7TE v</string>
@@ -17,31 +22,24 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="3">
-     <widget class="QGraphicsView" name="graphicsView_5">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
      <widget class="QGraphicsView" name="graphicsView">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
-        <horstretch>0</horstretch>
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>2</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
+    <item>
      <widget class="Line" name="line">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -51,64 +49,81 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QGraphicsView" name="graphicsView_5">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="menu">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>551</width>
+     <width>640</width>
      <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
+    <property name="font">
+     <font>
+      <family>Ubuntu</family>
+     </font>
     </property>
-    <widget class="QMenu" name="menuImport">
+    <property name="title">
+     <string>menu.file</string>
+    </property>
+    <widget class="QMenu" name="menuFileImport">
      <property name="title">
-      <string>Import</string>
+      <string>menu.file.import</string>
      </property>
-     <widget class="QMenu" name="menuSavestate">
+     <widget class="QMenu" name="menuFileImportSavestate">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="title">
-       <string>Savestate</string>
+       <string>menu.file.import.savestate</string>
       </property>
-      <addaction name="actionSnes9x"/>
-      <addaction name="actionZSNES"/>
-      <addaction name="actionBSNES"/>
+      <addaction name="menuFileImportSavestateSnes9x"/>
+      <addaction name="menuFileImportSavestateZsnes"/>
+      <addaction name="menuFileImportSavestateHigan"/>
      </widget>
-     <addaction name="actionRaw_8bpp_graphivd"/>
-     <addaction name="actionPallete"/>
-     <addaction name="actionRGB_Pallete"/>
-     <addaction name="actionRaw_Tilemap"/>
-     <addaction name="actionMode_7_daata"/>
-     <addaction name="menuSavestate"/>
+     <addaction name="menuFileImportGraphics"/>
+     <addaction name="menuFileImportPalette"/>
+     <addaction name="menuFileImportRgb"/>
+     <addaction name="menuFileImportTilemap"/>
+     <addaction name="menuFileImportInterleaved"/>
+     <addaction name="menuFileImportSavestate"/>
     </widget>
     <widget class="QMenu" name="menuExport">
      <property name="title">
-      <string>Export</string>
+      <string>menu.file.export</string>
      </property>
-     <addaction name="actionGraphics_2"/>
-     <addaction name="actionRawTilemap"/>
-     <addaction name="actionGraphics_Tilemap_interleaved"/>
+     <addaction name="menuExportGraphics"/>
+     <addaction name="menuExportTilemap"/>
+     <addaction name="menuExportInterleaved"/>
     </widget>
-    <addaction name="actionNew"/>
-    <addaction name="actionOpen"/>
-    <addaction name="actionOpen_Recent"/>
-    <addaction name="actionSave_Session"/>
-    <addaction name="actionSave_Session_As"/>
+    <addaction name="menuFileNew"/>
+    <addaction name="menuFileOpen"/>
+    <addaction name="menuFileRecent"/>
+    <addaction name="menuFileSave"/>
+    <addaction name="menuFileSaveAs"/>
     <addaction name="separator"/>
-    <addaction name="menuImport"/>
+    <addaction name="menuFileImport"/>
     <addaction name="menuExport"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>menu.edit</string>
     </property>
+    <addaction name="menuEditUndo"/>
+    <addaction name="menuEditRedo"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -158,19 +173,43 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actionNew">
+  <action name="menuFileNew">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>New</string>
+    <string>menu.file.new</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+    </font>
    </property>
   </action>
-  <action name="actionOpen">
+  <action name="menuFileOpen">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Open...</string>
+    <string>menu.file.open</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+    </font>
    </property>
   </action>
-  <action name="actionOpen_Recent">
+  <action name="menuFileRecent">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Open Recent</string>
+    <string>menu.file.recent</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+    </font>
    </property>
   </action>
   <action name="actionImport_8bpp">
@@ -193,29 +232,44 @@
     <string>Import Pure tilemap...</string>
    </property>
   </action>
-  <action name="actionRaw_8bpp_graphivd">
+  <action name="menuFileImportGraphics">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Raw 8bpp graphics...</string>
+    <string>menu.file.import.graphics</string>
    </property>
   </action>
-  <action name="actionPallete">
+  <action name="menuFileImportPalette">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Pallete...</string>
+    <string>menu.file.import.palette</string>
    </property>
   </action>
-  <action name="actionRGB_Pallete">
+  <action name="menuFileImportRgb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>RGB Pallete...</string>
+    <string>menu.file.import.rgb</string>
    </property>
   </action>
-  <action name="actionRaw_Tilemap">
+  <action name="menuFileImportTilemap">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Raw Tilemap...</string>
+    <string>menu.file.import.tilemap</string>
    </property>
   </action>
-  <action name="actionMode_7_daata">
+  <action name="menuFileImportInterleaved">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Interleaved graphics &amp; tilemap...</string>
+    <string>menu.file.import.interleaved</string>
    </property>
    <property name="iconText">
     <string>Interleaved graphics &amp; tilemap</string>
@@ -224,44 +278,98 @@
     <string>Interleaved graphics &amp; tilemap</string>
    </property>
   </action>
-  <action name="actionSnes9x">
+  <action name="menuFileImportSavestateSnes9x">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Snes9x...</string>
+    <string>menu.file.import.savestate.snes9x</string>
    </property>
   </action>
-  <action name="actionZSNES">
+  <action name="menuFileImportSavestateZsnes">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>ZSNES...</string>
+    <string>menu.file.import.savestate.zsnes</string>
    </property>
   </action>
-  <action name="actionBSNES">
+  <action name="menuFileImportSavestateHigan">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>BSNES/higan...</string>
+    <string>menu.file.import.savestate.higan</string>
    </property>
   </action>
-  <action name="actionGraphics_2">
+  <action name="menuExportGraphics">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Raw Graphics...</string>
+    <string>menu.file.export.graphics</string>
    </property>
   </action>
-  <action name="actionRawTilemap">
+  <action name="menuExportTilemap">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Raw Tilemap...</string>
+    <string>menu.file.export.tilemap</string>
    </property>
   </action>
-  <action name="actionGraphics_Tilemap_interleaved">
+  <action name="menuExportInterleaved">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Graphics &amp; Tilemap interleaved...</string>
+    <string>menu.file.export.interleaved</string>
    </property>
   </action>
-  <action name="actionSave_Session">
+  <action name="menuFileSave">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Save Session</string>
+    <string>menu.file.save</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+    </font>
    </property>
   </action>
-  <action name="actionSave_Session_As">
+  <action name="menuFileSaveAs">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
-    <string>Save Session As...</string>
+    <string>menu.file.saveAs</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Ubuntu</family>
+    </font>
+   </property>
+  </action>
+  <action name="menuEditUndo">
+   <property name="text">
+    <string>menu.edit.undo</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+    </font>
+   </property>
+  </action>
+  <action name="menuEditRedo">
+   <property name="text">
+    <string>menu.edit.redo</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Sans Serif</family>
+    </font>
    </property>
   </action>
  </widget>
