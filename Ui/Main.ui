@@ -77,18 +77,18 @@
      </font>
     </property>
     <property name="title">
-     <string>menu.file</string>
+     <string>menuFile</string>
     </property>
     <widget class="QMenu" name="menuFileImport">
      <property name="title">
-      <string>menu.file.import</string>
+      <string>menuFileImport</string>
      </property>
      <widget class="QMenu" name="menuFileImportSavestate">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="title">
-       <string>menu.file.import.savestate</string>
+       <string>menuFileImportSavestate</string>
       </property>
       <addaction name="menuFileImportSavestateSnes9x"/>
       <addaction name="menuFileImportSavestateZsnes"/>
@@ -101,26 +101,25 @@
      <addaction name="menuFileImportInterleaved"/>
      <addaction name="menuFileImportSavestate"/>
     </widget>
-    <widget class="QMenu" name="menuExport">
+    <widget class="QMenu" name="menuFileExport">
      <property name="title">
-      <string>menu.file.export</string>
+      <string>menuFileExport</string>
      </property>
-     <addaction name="menuExportGraphics"/>
-     <addaction name="menuExportTilemap"/>
-     <addaction name="menuExportInterleaved"/>
+     <addaction name="menuFileExportGraphics"/>
+     <addaction name="menuFileExportTilemap"/>
+     <addaction name="menuFileExportInterleaved"/>
     </widget>
     <addaction name="menuFileNew"/>
     <addaction name="menuFileOpen"/>
     <addaction name="menuFileRecent"/>
     <addaction name="menuFileSave"/>
     <addaction name="menuFileSaveAs"/>
-    <addaction name="separator"/>
     <addaction name="menuFileImport"/>
-    <addaction name="menuExport"/>
+    <addaction name="menuFileExport"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>menu.edit</string>
+     <string>menuEdit</string>
     </property>
     <addaction name="menuEditUndo"/>
     <addaction name="menuEditRedo"/>
@@ -132,17 +131,6 @@
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QToolBar" name="toolBar_2">
-   <property name="windowTitle">
-    <string>toolBar_2</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -178,12 +166,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.new</string>
+    <string>menuFileNew</string>
    </property>
    <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
+    <font/>
    </property>
   </action>
   <action name="menuFileOpen">
@@ -191,12 +177,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.open</string>
+    <string>menuFileOpen</string>
    </property>
    <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
+    <font/>
    </property>
   </action>
   <action name="menuFileRecent">
@@ -204,12 +188,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.recent</string>
+    <string>menuFileRecent</string>
    </property>
    <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
+    <font/>
    </property>
   </action>
   <action name="actionImport_8bpp">
@@ -237,7 +219,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.graphics</string>
+    <string>menuFileImportGraphics</string>
    </property>
   </action>
   <action name="menuFileImportPalette">
@@ -245,7 +227,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.palette</string>
+    <string>menuFileImportPalette</string>
    </property>
   </action>
   <action name="menuFileImportRgb">
@@ -253,7 +235,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.rgb</string>
+    <string>menuFileImportRgb</string>
    </property>
   </action>
   <action name="menuFileImportTilemap">
@@ -261,7 +243,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.tilemap</string>
+    <string>menuFileImportTilemap</string>
    </property>
   </action>
   <action name="menuFileImportInterleaved">
@@ -269,7 +251,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.interleaved</string>
+    <string>menuFileImportInterleaved</string>
    </property>
    <property name="iconText">
     <string>Interleaved graphics &amp; tilemap</string>
@@ -283,7 +265,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.savestate.snes9x</string>
+    <string>menuFileImportSavestateSnes9x</string>
    </property>
   </action>
   <action name="menuFileImportSavestateZsnes">
@@ -291,7 +273,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.savestate.zsnes</string>
+    <string>menuFileImportSavestateZsnes</string>
    </property>
   </action>
   <action name="menuFileImportSavestateHigan">
@@ -299,31 +281,31 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.import.savestate.higan</string>
+    <string>menuFileImportSavestateHigan</string>
    </property>
   </action>
-  <action name="menuExportGraphics">
+  <action name="menuFileExportGraphics">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.export.graphics</string>
+    <string>menuFileExportGraphics</string>
    </property>
   </action>
-  <action name="menuExportTilemap">
+  <action name="menuFileExportTilemap">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.export.tilemap</string>
+    <string>menuFileExportTilemap</string>
    </property>
   </action>
-  <action name="menuExportInterleaved">
+  <action name="menuFileExportInterleaved">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.export.interleaved</string>
+    <string>menuFileExportInterleaved</string>
    </property>
   </action>
   <action name="menuFileSave">
@@ -331,12 +313,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.save</string>
+    <string>menuFileSave</string>
    </property>
    <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
+    <font/>
    </property>
   </action>
   <action name="menuFileSaveAs">
@@ -344,17 +324,15 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>menu.file.saveAs</string>
+    <string>menuFileSaveAs</string>
    </property>
    <property name="font">
-    <font>
-     <family>Ubuntu</family>
-    </font>
+    <font/>
    </property>
   </action>
   <action name="menuEditUndo">
    <property name="text">
-    <string>menu.edit.undo</string>
+    <string>menuEditUndo</string>
    </property>
    <property name="font">
     <font>
@@ -364,7 +342,7 @@
   </action>
   <action name="menuEditRedo">
    <property name="text">
-    <string>menu.edit.redo</string>
+    <string>menuEditRedo</string>
    </property>
    <property name="font">
     <font>
