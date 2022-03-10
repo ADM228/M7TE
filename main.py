@@ -12,24 +12,21 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.show()
     def localize(self):
         self.locale = configparser.ConfigParser()
+        self.locale.optionxform = str #making it case-insensitive
         if os.path.isfile("m7te.lang"):
             self.locale.read("m7te.lang",encoding="utf-8")
         self.localizedData = self.locale[self.config['M7TE']['language']]
-        print(self.ui.menuFile.title())
-        for menu in self.ui.menu.findChildren(QtWidgets.QWidget):
-            try:
-                print (menu.title())
-            except: pass
-            try:
-                print (menu.value())
-            except: pass
-            # menu.setTitle(self.localizedData[menu.title()])
-        print("------------")
-        for action in self.ui.menu.actions():
-            print (action.text())
-            for action2 in action.findChildren(QtWidgets.QWidget):
-                print (action2.text())
-            # action.setText(self.localizedData[action.text()])
+        for key in self.localizedData:
+            #print(key, self.localizedData[key])
+            attr = getattr(self.ui, key)
+            if str(type (attr)) == "<class 'PyQt5.QtWidgets.QMenu'>":
+                attr.setTitle(self.localizedData[key])
+            elif str(type (attr)) == "<class 'PyQt5.QtWidgets.QAction'>":
+                attr.setText(self.localizedData[key])
+            #attr.setText(self.localizedData[key])
+            
+            #attr.value = self.localizedData[key]
+            setattr (self.ui, key, attr)
     def parseSettings(self):
         self.config = configparser.ConfigParser()
         if os.path.isfile("m7te.cfg"):

@@ -1,5 +1,4 @@
 [en_us]
-dialogSettingsLanguage = 🇺🇸 English 
 menuFile = File
 menuFileNew = New
 menuFileOpen = Open...
@@ -23,10 +22,8 @@ menuFileExportInterleaved = Interleaved graphics and tilemap...
 menuEdit = Edit
 menuEditUndo = Undo
 menuEditRedo = Redo
- = 
 
 [ru_ru]
-dialogSettingsLanguage = 🇷🇺 Русский
 menuFile = Файл
 menuFileNew = Новый
 menuFileOpen = Открыть...
@@ -50,4 +47,7 @@ menuFileExportInterleaved = Чередующихся графики и карт�
 menuEdit = Правка
 menuEditUndo = Отменить
 menuEditRedo = Повторить
-  = 
+
+[langSelect]
+en_us = 🇺🇸 English 
+ru_ru = 🇷🇺 Русский
