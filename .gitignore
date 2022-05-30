@@ -2,3 +2,8 @@ Logo_notflat.png
 icon.png
 Logo_flat.png
 .fuse_hidden000049db00000001
+m7te.cfg
+Ui/icon_hires.png
+.gitignore
+__pycache__
+Ui/Icon_lores.png

@@ -22,6 +22,9 @@ menuFileExportInterleaved = Interleaved graphics and tilemap...
 menuEdit = Edit
 menuEditUndo = Undo
 menuEditRedo = Redo
+menuHelp = Help
+menuHelpReadme = Readme
+menuHelpAbout = About
 
 [ru_ru]
 menuFile = Файл
@@ -47,6 +50,9 @@ menuFileExportInterleaved = Чередующихся графики и карт�
 menuEdit = Правка
 menuEditUndo = Отменить
 menuEditRedo = Повторить
+menuHelp = Справка
+menuHelpReadme = Readme
+menuHelpAbout = О программе
 
 [langSelect]
 en_us = 🇺🇸 English 

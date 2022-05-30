@@ -9,7 +9,7 @@
 <h3>Basic things to be added</h3>
 <ul>
     <li>The entire code</li>
-    <li>Graphics import (YYCHR compatible)</li>
+    <li>Graphics import (YY-CHR and PY-CHR compatible)</li>
 </ul>
 <h3>Things to be added in the far future </h3>
 <ul> 
@@ -18,4 +18,4 @@
 </ul>
 
 <h3> Notes:</h3>
-*It doesn't work yet lol, wait a month at least
+*It doesn't work yet lol, wait at least an eon
