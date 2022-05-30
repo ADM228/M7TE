@@ -127,7 +127,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QGraphicsView" name="graphicsView_5">
+        <widget class="QGraphicsView" name="graphicsView_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
            <horstretch>1</horstretch>
